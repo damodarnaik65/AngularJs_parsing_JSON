@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">    
+		<title>Angular js Parsing JSON</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<span class="navbar-brand">Angular js Parsing JSON</span>
+				</div>
+			</div>
+		</nav>
+		<div class="container" ng-app="myApp">
+			<div ng-controller="booksController">
+				<div class="row"> 
+					<div class="row">
+					  <div class="col-xs-12">
+						<ul class="list-group" ng-repeat="book in books">
+							<li class="list-group-item">
+							  <h3> <span class="label label-default">{{book.id}}</span> {{book.title}}</h3>
+								<h4><img src="img/author.png"  height="30" alt="Author : " /> {{book.author}}</h4>
+								<p>{{book.content}}</p>
+								<a href="{{book.original_article_link}}">Original article</a><br/>
+								<img src="{{book.graphics_link}}" height="150" width="150" alt="Graphics" /><br/>
+								<img src="img/like-icon.png"  height="20" />{{book.likes_count}}<br/>
+								<h3><img src="img/id.png"  height="30" alt="ID : " /> {{book._id.$oid}}</h3>
+							</li>
+						</ul>   
+					  </div>
+					</div>
+				</div>
+		</div>
+        
+		<script src="js/app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <div class="copyright">AngularJS JSON(BOOK data) parsing by : Damodar krishna Naik</div>
+	</body>
+</html>
